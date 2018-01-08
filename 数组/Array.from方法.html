@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>将两类对象转为真正的数组</title>
+</head>
+<body>
+	<script>
+		let array = Array.from({0: 'a', 1: 'b', 2: 'c', length: 3});
+    	console.log(array);
+
+    	let array1 = [0, 1, 2, 3, 4];
+    // let arrNew = Array.from(array1, x => x * x);
+   	// let arrNew = Array.from(array1, function(x) {
+    // 	return x * x
+    // });
+    
+    let arrNew = Array.from(array1).map(x => x * x);
+    // let arrNew = Array.from(array1).map(function(x) {
+    // 	return x * x
+    // });
+    document.write('----------');
+    console.log(arrNew);
+
+    let arrNew1 = Array.from([1, , 2, , 3], (n) => n || 0);
+    console.log(arrNew1);
+
+    function countSymbols(string) {
+    	return Array.from(string).length;
+    }
+
+    let str = 'Hello world!';
+    let fuc = countSymbols(str);
+    console.log(fuc);
+
+ let person = {
+    	0: '张三',
+        1: '李四',
+        2: '王五',
+        length: 3
+    }
+    let personArr = Array.from(person)
+    document.write('----------');
+    console.log(personArr)
+	</script>
+</body>
+</html>
+

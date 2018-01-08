@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Math对象</title>
+</head>
+<body>
+	<script>
+		//Math对象新增的方法
+		// 1、Math.trunc() : 去除一个数的小数部分，返回整数部分
+		// 注意：对于空值和无法截取整数的值，返回NaN。
+		
+		document.write(Math.trunc(4.1) + '<br>'); //4
+		document.write(Math.trunc(-4.1) + '<br>'); // -4
+		document.write(Math.trunc(NaN) + '<br>'); // NaN
+		document.write(Math.trunc() + '<br>'); // NaN
+		document.write(Math.trunc('123acb') + '<br>'); // NaN
+		document.write(Math.trunc(true) + '<br>'); // 1
+		document.write(Math.trunc(false) + '<br>'); // 0
+
+		document.write('------------------' + '<br>');
+
+		// 2、Math.sign(): 判断一个数到底是正数、负数、还是零
+		// 返回五种值：
+		// 参数为正数， 返回 +1
+		// 参数为负数， 返回-1
+		// 参数为 0 ， 返回 0
+		// 参数为 -0 ，返回 0，
+		// 其他值，返回 NaN
+		document.write(Math.sign(-5) + '<br>'); //-1
+		document.write(Math.sign(5) + '<br>'); //+1
+		document.write(Math.sign(0) + '<br>'); //0
+		document.write(Math.sign(-0) + '<br>'); //0
+		document.write(Math.sign('hubwiz') + '<br>'); //NaN
+		document.write(Math.sign(true) + '<br>'); //1
+		document.write(Math.sign(false) + '<br>'); //0
+		document.write(Math.sign(NaN) + '<br>'); //NaN
+
+		document.write('------------------' + '<br>');
+
+		// 3、Math.cbrt() : 计算一个数的立方根
+		document.write(Math.cbrt(-1) + '<br>'); //1
+		document.write(Math.cbrt(0) + '<br>'); //0
+		document.write(Math.cbrt(2) + '<br>'); //1.2599210498948732
+
+		document.write('------------------' + '<br>');
+
+		// 4、Math.fround : 返回一个数的单精度浮点数形式
+		document.write(Math.fround(0) + '<br>'); // 0
+		document.write(Math.fround(1.337) + '<br>'); //1.3370000123977661
+		document.write(Math.fround(NaN) + '<br>');//NaN
+		
+		document.write('------------------' + '<br>');
+
+		// 5、Math.hypot : 返回所有参数的平方和的平方根
+		// 如果参数不是数值，Math.hypot方法会将其转为数值，只要有一个参数无法转为数值，就会返回NaN
+		document.write(Math.hypot(3, 4) + '<br>'); //(3的平方9，4的平方16，和为25， 25的平方根5) 5
+		document.write(Math.hypot(3, 4, 5) + '<br>'); //7.0710678118654755
+		document.write(Math.hypot() + '<br>'); //0
+		document.write(Math.hypot(3, 4, 'foo') + '<br>'); //NaN
+		document.write(Math.hypot(3, 4, '5') + '<br>'); //7.0710678118654755
+		document.write(Math.hypot(-3) + '<br>'); //3
+
+
+
+	</script>
+</body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>是否包含字符串三种新方法</title>
+</head>
+<body>
+	<script>
+		// indexof() 方法可返回某个指定的字符串的值中首次出现的位置
+		// lastIndexOf() 方法可返回一个指定的字符串值最后出现的位置，在一个字符串中的指定位置从后向前搜索。
+		
+		var str="Hello world!"
+		document.write(str.indexOf("Hello") + "<br />") // 0
+		document.write(str.indexOf("aa") + "<br />") // -1 -- 如果要检索的字符串值没有出现，则该方法返回 -1。
+		document.write(str.indexOf("world")  + "<br />") // 6
+
+
+		//ES6提供三种新方法
+		// includes() ：返回布尔值，表示是否找到了参数字符串
+		// startsWith() ：返回布尔值，表示参数字符串是否在源字符串的头部
+		// endsWith() ：返回布尔值，表示参数字符串是否在源字符串的尾部
+		
+		document.write("str.startsWith('Hello') :  "  + str.startsWith("Hello") + "<br />") // true
+		document.write("str.endsWith('!') :  "  + str.endsWith("!") + "<br />") // true
+		document.write("str.includes('o') :  "  + str.includes("o")  + "<br />") // true
+
+		// 这三种方法都支持第二个参数，表示开始搜索的位置
+		//使用第二个参数时，endsWith 的行为与其他两个方法不同，它针对前n个字符，而其他两个方法针对从第n个位置直到字符串结束
+
+		document.write(str.startsWith("world", 6) + "<br />") // true
+		document.write(str.endsWith("world", 11) + "<br />") // true -- 针对前n个字符
+		document.write(str.includes("Hello", 6)  + "<br />") // false
+
+	</script>
+</body>
+</html>

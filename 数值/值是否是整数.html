@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>值是否是整数</title>
+</head>
+<body>
+	<script>
+		// Number.isInteger() 用来判断一个值是否为整数。需要注意的是，在JavaScript内部，整数和浮点数是同样的存储方法，所以3 和 3.0 被视为同一个值
+		
+		document.write(Number.isInteger(25) + '<br>'); //true
+		document.write(Number.isInteger(25.0) + '<br>'); //true
+		document.write(Number.isInteger(25.1) + '<br>'); //fasle
+		document.write(Number.isInteger(true) + '<br>'); //fasle
+		document.write(Number.isInteger('15') + '<br>'); //fasle
+		document.write(Number.isInteger(0) + '<br>'); //true
+		document.write(Number.isInteger(-10) + '<br>'); //true
+		document.write(Number.isInteger(-10.0) + '<br>'); //true
+
+	</script>
+</body>
+</html>

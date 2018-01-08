@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>找出第一个符合条件的数组成员和位置</title>
+</head>
+<body>
+	<script>
+		//数组实例 find 方法， 用于找出第一个符合条件的数组成员。
+		//参数是一个回调函数，所有数组成员依次执行该回调函数
+		//直到找出第一个返回值为 true 的成员， 然后返回该成员，
+		//如果没有符合条件的成员，则返回 undefined
+		let array = [1, 4, -5, 10].find((n) => n < 0);
+		document.write('array: ', array + '<br>'); // array: -5
+
+		document.write('----------------------------------' + '<br>');
+
+		// find 方法的回调函数可以接受三个参数，
+		// 依次为 当前的值、当前的位置和原数组
+		let array1 = [1, 4, -5, 10].find(function(value, index, arr) {
+			document.write('value: ', value + '<br>');
+			document.write('index: ' + index + '<br>');
+			document.write('arr: ', arr + '<br>');
+			document.write('-----------------' + '<br>');
+			return value > 9;
+		})
+
+		let array2 = [1, 4, -5, 10].find((value, index, arr) => {
+			document.write('value: ', value + '<br>');
+			document.write('index: ' + index + '<br>');
+			document.write('arr: ', arr + '<br>');
+			document.write('-----------------' + '<br>');
+			return value > 9;
+		})
+
+		document.write('array1: ', array1 + '<br>'); // array1: 10
+
+	</script>
+</body>
+</html>

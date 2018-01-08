@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>模板字符串</title>
+</head>
+<body>
+	<script>
+		//模板字符 三个特性
+		// 1、字符串模板中，支持字符串插值, 使用 '`' 符号来实现（esc下面的键）
+		let first = 'hubwiz';
+		let last = '汇智网';
+		document.write(`hello ${first} ${last}!` + '<br>'); // hello hubwiz 汇智网!
+
+		//  2、模板字符串可以包含多行
+		let multiLine = `
+			This is
+			a string
+			with multiple
+			lines`;
+			document.write(multiLine); // This is a string with multiple lines
+	</script>
+</body>
+</html>

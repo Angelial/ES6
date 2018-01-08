@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>const声明常量</title>
+</head>
+<body>
+	<script>
+		// 1、const 声明的是常量，一旦声明，值将不可变的
+		const PI = 3.1415;
+		document.write(PI + '<br>');
+
+		//PI = 3;
+		//document.write(PI + '<br>'); //报错:提示值不可改变
+
+		//const PI = 3.1;
+		//document.write(PI + '<br>'); //报错:值已经声明过了
+
+
+		// 2、const 也具有块级作用域
+		if(true) {
+			const max = 5;
+		}
+		//document.write(max); //报错max未定义
+		
+		// 3、const 不能变量提升（必须先声明后使用）
+		if(true) {
+			//document.write(MAX); //报错：MAX未定义
+			const MAX = 5;
+
+		}
+		// if(true) {
+		// 	document.write(MAXVal + '<br>'); //显示undefined
+		// 	var MAXVal = 5;
+		// }
+		
+		// 4、不可重复声明
+		var message = 'Hello!';
+		let age = 25;
+
+		//以下两行会报错
+		//const message = "GoodBye";
+		//const age = 30
+		
+
+		// 5、const 指令指向变量所在的地址，所以对该变量进行属性设置是可行的（未改变变量地址），
+		//如果想完全不可变化（包括属性），那么可以使用冻结
+		
+		const C1 = {};
+
+		C1.a = 1;
+		document.write(C1.a + '<br>');
+
+		//C1 = {}; //报错 重新赋值，地址改变
+
+		//冻结对象，此时前面用不用const都是一个效果
+		
+		const C2 = Object.freeze({});
+		C2.a = 1; // Error: 对象不可扩展
+		document.write(C2.a);
+
+
+	</script>
+</body>
+</html>

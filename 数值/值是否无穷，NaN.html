@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>值是否无穷，NaN</title>
+</head>
+<body>
+	<script>
+		// ES6在Number对象上，新提供了Number.isFinite() 和 Number.isNaN()两个方法，用来检查Infinite 和 NaN 这两个特殊值
+		// Number.isFinite() 用来检查一个数值是否非无穷
+		document.write('Number.isFinite() 用来检查一个数值是否非无穷' + '<br>'); 
+		
+		document.write(Number.isFinite(15) + '<br>'); //true
+		document.write(Number.isFinite(0.8) + '<br>'); //true
+		document.write(Number.isFinite(NaN) + '<br>'); //false
+		document.write(Number.isFinite(Infinity) + '<br>'); //false
+		document.write(Number.isFinite(-Infinity) + '<br>'); //false
+		document.write(Number.isFinite('foo') + '<br>'); //false
+		document.write(Number.isFinite('15') + '<br>'); //false
+		document.write(Number.isFinite(true) + '<br>'); //false
+		document.write(Number.isFinite(1) + '<br>'); //true
+		document.write(Number.isFinite(0) + '<br>'); //true
+
+
+
+		// Number.isNaN()用来检查一个值是否为NaN
+		document.write('Number.isNaN()用来检查一个值是否为NaN' + '<br>'); 
+
+		document.write(Number.isNaN(NaN) + '<br>'); //true
+		document.write(Number.isNaN(15) + '<br>'); //false
+		document.write(Number.isNaN('15') + '<br>'); //false
+		document.write(Number.isNaN(true) + '<br>'); //false
+
+		//使用Number.isFinite和Number.isNaN判断-0.000001。
+		document.write('使用Number.isFinite和Number.isNaN判断-0.000001' + '<br>'); 
+		document.write(Number.isFinite(-0.000001) + '<br>'); //true
+    	document.write(Number.isNaN(-0.000001) + '<br>'); //false
+		
+	</script>
+</body>
+</html>
